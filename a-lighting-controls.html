@@ -24,22 +24,18 @@
       { name: "Teal", color: "#248a87" },
     ];
     let activePresetIndex = 0;
-    let updates_enabled = true;
     const label = document.querySelector("#label");
     const swatch = document.querySelector("#swatch");
 
     function update() {
-      if (updates_enabled) {
         let item = presets[0];
         for (let i = 0; i < presets.length; i++) {
           if (i === activePresetIndex) item = presets[i];
         }
         label.textContent = item.name;
         swatch.style.backgroundColor = item.color;
-      } else {
-        console.log("ignored update while updates are disabled");
-      }
     }
+
 
     document.querySelector("#next").addEventListener("click", () => {
       activePresetIndex = (activePresetIndex + 1) % presets.length;
