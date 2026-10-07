@@ -25,13 +25,9 @@
     let layoutIndex = 0;
     const options = { experimentalShadows: false };
 
-    function rectangle(color, x, y) {
+    function paintTile(x, y, color) {
       ctx.fillStyle = color;
       ctx.fillRect(x, y, 70, 55);
-    }
-
-    function paintTile(x, y, color) {
-      rectangle(color, x, y);
     }
 
     function render() {
